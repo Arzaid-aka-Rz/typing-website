@@ -1,6 +1,6 @@
 const darkTheme = {
   label: "Dark Theme",
-  background: "#121212", // Very dark gray, almost black
+  background: "#000000", // Very dark gray, almost black
   textColor: "#b0b0b0", // Slightly gray for readability
   title: "#4fc3f7", // Cool, soft blue for emphasis
   typeBoxText: "#ffffff", // White for high contrast
