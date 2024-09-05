@@ -31,43 +31,50 @@ const Footer = () => {
 
 
       <div className="themeButton">
-        <Select
-          onChange={handleChange}
-          options={themeOptions}
-          menuPlacement="top"
-          defaultValue={{ label: theme.label, value: theme }}
-          styles={{
-            control: (styles) => ({
-              ...styles,
-              backgroundColor: theme.background,
-              borderColor: theme.title, // Add border color to match theme
-              boxShadow: "none", // Remove default box-shadow for consistency
-              "&:hover": {
-                borderColor: theme.title, // Border color on hover
-              },
-            }),
-            menu: (styles) => ({
-              ...styles,
-              backgroundColor: theme.background,
-              borderRadius: "8px", // Rounded corners for the dropdown
-              padding: "0.5rem", // Add some padding for better spacing
-            }),
-            option: (styles, { isFocused }) => ({
-              ...styles,
-              backgroundColor: isFocused ? theme.title : theme.background,
-              color: isFocused ? theme.background : theme.textColor,
-              cursor: "pointer",
-            }),
-            singleValue: (styles) => ({
-              ...styles,
-              color: theme.title,
-            }),
-            placeholder: (styles) => ({
-              ...styles,
-              color: theme.textColor,
-            }),
-          }}
-        />
+      <Select
+  onChange={handleChange}
+  options={themeOptions}
+  menuPlacement="top"
+  defaultValue={{ label: theme.label, value: theme }}
+  styles={{
+    control: (styles) => ({
+      ...styles,
+      backgroundColor: theme.background,
+      borderColor: theme.title,
+      boxShadow: "none",
+      "&:hover": {
+        borderColor: theme.title,
+      },
+    }),
+    menu: (styles) => ({
+      ...styles,
+      backgroundColor: theme.background,
+      borderRadius: "8px",
+      padding: "0.5rem",
+      // Scroll ko remove karne ke liye maxHeight ko barhaye
+      maxHeight: "none", // Yeh ensure karega ki scrolling na aaye
+    }),
+    menuList: (styles) => ({
+      ...styles,
+      maxHeight: "none", // Scroll ko completely remove karne ke liye
+    }),
+    option: (styles, { isFocused }) => ({
+      ...styles,
+      backgroundColor: isFocused ? theme.title : theme.background,
+      color: isFocused ? theme.background : theme.textColor,
+      cursor: "pointer",
+    }),
+    singleValue: (styles) => ({
+      ...styles,
+      color: theme.title,
+    }),
+    placeholder: (styles) => ({
+      ...styles,
+      color: theme.textColor,
+    }),
+  }}
+/>
+
       </div>
     </div>
   );
